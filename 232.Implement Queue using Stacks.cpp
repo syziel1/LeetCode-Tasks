@@ -1,4 +1,3 @@
-#include <iostream>
 #include <stack>
 using namespace std;
 
@@ -41,14 +40,3 @@ public:
         return firstDown.empty() && firstUp.empty();
     }
 };
-
-int main() {
-    MyQueue obj;
-    obj.push(1);
-    obj.push(2);
-    int param_2 = obj.pop();
-    int param_3 = obj.peek();
-    bool param_4 = obj.empty();
-    cout << param_2 << " " << param_3 << " " << param_4 << endl;
-    return 0;
-}
