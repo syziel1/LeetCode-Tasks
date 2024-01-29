@@ -9,9 +9,6 @@ def power(base, exponent):
     # The time complexity is O(log n) because the exponent is halved during each recursive call
     # The space complexity is O(log n) because the number of recursive calls is equal to the exponent
     # The space complexity can be reduced to O(1) by using a while loop instead of recursion
-
-    # During tests, counting the number of multiplications
-    multiplications = 0
     
     if exponent == 0:
         return 1
