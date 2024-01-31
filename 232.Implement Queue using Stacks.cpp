@@ -7,7 +7,6 @@ private:
     stack<int> firstUp;
 public:
     MyQueue() {
-        
     }
     
     void push(int x) {
