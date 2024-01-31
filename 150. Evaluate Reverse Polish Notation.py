@@ -43,7 +43,7 @@ class Solution_1(object):
 
 class Solution_2(object):
     # Time: O(n)
-    # Space: O(n)
+    # Space: O(1)
     # Memory: 13.26MB -> Beats 99.25% of users with Python
     # Runtime of all testcases: 52ms
     def negative_sign_division(self, a, b):
@@ -72,7 +72,7 @@ class Solution_2(object):
                 del tokens[cur - 1:cur + 1]
                 cur -= 2
             cur += 1
-        return int(tokens[0])
+        return int(tokens[0]) # int() is necessary when len(tokens) == 1, e.g. ["18"]
 
 # Testing
 solution = Solution_2()
