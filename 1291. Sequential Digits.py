@@ -12,15 +12,19 @@ class Solution_1:
     # Runtime: 34ms - 40ms
     def sequentialDigits(self, low: int, high: int) -> List[int]:
         sequential_digits_numbers = []
+        first_digit = int(str(low)[0])
+        number = first_digit
         for number_of_digits in range(len(str(low)), 10): # 10 is not included
-            for start in range(1, 11 - number_of_digits): # first digit of the number
-                number = start
-                for i in range(start + 1, start + number_of_digits):
+            while first_digit + number_of_digits <= 10: # first digit of the number
+                number = first_digit
+                for i in range(first_digit + 1, first_digit + number_of_digits):
                     number = number * 10 + i
                 if number > high:
                     return sequential_digits_numbers
                 if number >= low:
                     sequential_digits_numbers.append(number)
+                first_digit += 1
+            first_digit = 1
         return sequential_digits_numbers
     
 class Solution_2:
@@ -28,7 +32,7 @@ class Solution_2:
     # Runtime: 34ms - 44ms
     def sequentialDigits(self, low: int, high: int) -> List[int]:
         sequential_digits_numbers = []
-        for number_of_digits in range(2, 10): # 10 is not included
+        for number_of_digits in range(len(str(low)), 10): # 10 is not included
             for start in range(1, 11 - number_of_digits): # first digit of the number
                 number = str(start)
                 digit = start + 1
@@ -45,4 +49,4 @@ class Solution_2:
 # Testing
     
 if __name__ == "__main__":
-    print(Solution_1().sequentialDigits(100, 300)) # [123,234]
+    print(Solution_1().sequentialDigits(1000, 13000))
